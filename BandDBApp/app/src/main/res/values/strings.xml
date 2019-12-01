@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Antic</string>
+    <string name="action_profile">Profile</string>
+    <string name="action_scroll">Scroll</string>
+    <string name="action_swipe">Swipe</string>
+
+    <string-array name="bands">
+        <item>Angry Lizard</item>
+        <item>Angry Penguin</item>
+        <item>Apex Cats</item>
+        <item>Dolphin Contraband</item>
+        <item>Cowboy Advice</item>
+        <item>Favored Enemy</item>
+        <item>Felt Cute</item>
+        <item>My True Self</item>
+        <item>Our GF Now</item>
+        <item>Cute Pup c:</item>
+        <item>Wack</item>
+        <item>The Final Gender</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>angrylizard</item>
+        <item>angrypenguin</item>
+        <item>apexcat</item>
+        <item>copdolphin</item>
+        <item>cowboyadvice</item>
+        <item>dndmeme</item>
+        <item>feltcute</item>
+        <item>innercowboy</item>
+        <item>ourgf</item>
+        <item>pup</item>
+        <item>wackskyrim</item>
+        <item>wegender</item>
+    </string-array>
+</resources>
