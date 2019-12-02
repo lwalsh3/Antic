@@ -57,14 +57,11 @@ public class SwipeActivity extends AppCompatActivity {
         nameTextView.setText(posts.get(currentPost).getName());
         descriptionTextView.setImageResource(imageId);
 
-        dislikeButton.setOnClickListener((new View.OnClickListener()
-        {
+        dislikeButton.setOnClickListener((new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 currentPost++;
-                if (currentPost >= posts.size())
-                {
+                if (currentPost >= posts.size()) {
                     currentPost = 0;
                 }
                 currentImageRef = posts.get(currentPost).getDescription();
@@ -74,14 +71,11 @@ public class SwipeActivity extends AppCompatActivity {
             }
         }));
 
-        likeButton.setOnClickListener((new View.OnClickListener()
-        {
+        likeButton.setOnClickListener((new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 currentPost++;
-                if (currentPost >= posts.size())
-                {
+                if (currentPost >= posts.size()) {
                     currentPost = 0;
                 }
                 currentImageRef = posts.get(currentPost).getDescription();
@@ -91,11 +85,9 @@ public class SwipeActivity extends AppCompatActivity {
             }
         }));
 
-        saveImageButton.setOnClickListener((new View.OnClickListener()
-        {
+        saveImageButton.setOnClickListener((new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 //TODO save Image from current post to local storage of device
             }
         }));
@@ -109,15 +101,16 @@ public class SwipeActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) { switch(item.getItemId()) {
-        case R.id.scroll:
-            Intent intent = new Intent(SwipeActivity.this, ListActivity.class);
-            startActivity(intent);
-            return(true);
-        case R.id.profile:
-            startActivity(new Intent(SwipeActivity.this, ProfileActivity.class));
-            return(true);
-    }
-        return(super.onOptionsItemSelected(item));
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.scroll:
+                Intent intent = new Intent(SwipeActivity.this, ListActivity.class);
+                startActivity(intent);
+                return (true);
+            case R.id.profile:
+                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                return (true);
+        }
+        return (super.onOptionsItemSelected(item));
     }
 }

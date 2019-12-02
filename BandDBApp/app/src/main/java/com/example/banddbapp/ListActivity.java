@@ -51,7 +51,7 @@ public class ListActivity extends AppCompatActivity implements ListFragment.OnBa
             startActivity(intent);
             return(true);
         case R.id.profile:
-            startActivity(new Intent(ListActivity.this, ProfileActivity.class));
+            startActivity(new Intent(this, ProfileActivity.class));
             return(true);
     }
         return(super.onOptionsItemSelected(item));

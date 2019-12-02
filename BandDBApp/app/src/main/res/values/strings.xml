@@ -3,6 +3,8 @@
     <string name="action_profile">Profile</string>
     <string name="action_scroll">Scroll</string>
     <string name="action_swipe">Swipe</string>
+    <string name="name">Name</string>
+    <string name="bio">Bio</string>
 
     <string-array name="bands">
         <item>Angry Lizard</item>
