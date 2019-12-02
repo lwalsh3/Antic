@@ -9,11 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="305dp">
 
-        <ImageView
-            android:id="@+id/imgProfile"
-            android:layout_width="325dp"
-            android:layout_height="304dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <ImageButton
+            android:id="@+id/btnPhoto"
+            android:layout_width="298dp"
+            android:layout_height="305dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

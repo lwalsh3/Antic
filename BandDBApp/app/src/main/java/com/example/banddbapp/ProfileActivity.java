@@ -1,11 +1,14 @@
 package com.example.banddbapp;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +22,8 @@ import java.io.FileWriter;
 import java.io.Writer;
 
 public class ProfileActivity extends AppCompatActivity {
+
+    private final int SELECT_PHOTO = 1;
 
     private Menu mMenu;
 
@@ -39,6 +44,15 @@ public class ProfileActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+
+        ImageButton btnPhoto = findViewById(R.id.btnPhoto);
+        btnPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivityForResult(new Intent(Intent.ACTION_PICK), SELECT_PHOTO);
+            }
+        });
+
     }
 
     @Override
@@ -86,6 +100,22 @@ public class ProfileActivity extends AppCompatActivity {
             Log.d("EX", "onPause: " + e);
         }
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
+        super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
+
+        if (requestCode == SELECT_PHOTO) {
+            if (resultCode == RESULT_OK) {
+                try {
+                    ImageButton btnPhoto = findViewById(R.id.btnPhoto);
+                    btnPhoto.setImageBitmap(BitmapFactory.decodeStream(getContentResolver().openInputStream(imageReturnedIntent.getData())));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
 }
